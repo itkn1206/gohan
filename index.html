@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ごはん帳">
+<meta name="theme-color" content="#171715">
+<meta name="robots" content="noindex">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<title>ごはん帳</title>
+<style>
+:root{--bg:#f6f5f2;--bar:#fff;--tx:#1d1d1b}
+@media (prefers-color-scheme:dark){:root{--bg:#171715;--bar:#22221f;--tx:#eceae4}}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;overscroll-behavior:none}
+iframe{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);bottom:env(safe-area-inset-bottom,0px);width:100%;height:calc(100% - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));border:0;background:var(--bg)}
+body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:env(safe-area-inset-bottom,0px);background:var(--bar)}
+.msg{font:15px/1.7 -apple-system,"Hiragino Sans",sans-serif;color:var(--tx);padding:48px 24px;text-align:center}
+</style>
+</head>
+<body>
+<iframe id="app" title="ふたりのごはん帳" allow="clipboard-write" hidden></iframe>
+<div class="msg" id="msg" hidden>合言葉つきのURLで開いてください。<br>（夫から届いたURLをそのまま開けばOKです）</div>
+<script>
+// 合言葉は URL の # の後ろにだけ書く（# 以降はサーバーに送られず、このページのファイルにも残らない）
+var EXEC = 'https://script.google.com/macros/s/AKfycbwT3jhMS9bx3xPnj_0Kvua3H5Wt_2BKxZzTM-jyBeOiEV3BM1LS8G_mRNIMuC1-lt04/exec';
+var q = location.hash.replace(/^#/, '');
+try { if (/(^|&)k=/.test(q)) localStorage.setItem('gohan', q); else q = localStorage.getItem('gohan') || ''; } catch (e) {}
+if (/(^|&)k=/.test(q)) {
+  var f = document.getElementById('app');
+  f.src = EXEC + '?' + q;
+  f.hidden = false;
+} else {
+  document.getElementById('msg').hidden = false;
+}
+window.addEventListener('hashchange', function () { location.reload(); });
+</script>
+</body>
+</html>
