@@ -7,14 +7,16 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ごはん帳">
-<meta name="theme-color" content="#171715">
+<meta name="theme-color" content="#F5F3EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <meta name="robots" content="noindex">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-180.png">
 <title>ごはん帳</title>
 <style>
-:root{--bg:#f6f5f2;--bar:#fff;--tx:#1d1d1b}
-@media (prefers-color-scheme:dark){:root{--bg:#171715;--bar:#22221f;--tx:#eceae4}}
+:root{--bg:#F5F3EF;--tx:#1A1A1A}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--tx:#F2F0EC}}
 html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;overscroll-behavior:none}
 iframe{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);bottom:0;width:100%;height:calc(100% - env(safe-area-inset-top,0px));border:0;background:var(--bg)}
 .msg{font:15px/1.7 -apple-system,"Hiragino Sans",sans-serif;color:var(--tx);padding:48px 24px;text-align:center}
