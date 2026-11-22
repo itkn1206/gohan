@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B2519"/><stop offset="1" stop-color="#1E120B"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="1.02" r="0.62"><stop offset="0" stop-color="#FFB869" stop-opacity="0.55"/><stop offset="1" stop-color="#FFB869" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cloth" gradientUnits="userSpaceOnUse" x1="0" y1="196" x2="0" y2="806"><stop offset="0" stop-color="#C9582A"/><stop offset="1" stop-color="#A23C16"/></linearGradient>
+    <linearGradient id="folds" gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="874" y2="0"><stop offset="0.000" stop-color="#FFFFFF" stop-opacity="0.07"/><stop offset="0.083" stop-color="#000000" stop-opacity="0.07"/><stop offset="0.167" stop-color="#FFFFFF" stop-opacity="0.07"/><stop offset="0.250" stop-color="#000000" stop-opacity="0.07"/><stop offset="0.333" stop-color="#FFFFFF" stop-opacity="0.07"/><stop offset="0.417" stop-color="#000000" stop-opacity="0.07"/><stop offset="0.500" stop-color="#FFFFFF" stop-opacity="0.07"/><stop offset="0.583" stop-color="#000000" stop-opacity="0.07"/><stop offset="0.667" stop-color="#FFFFFF" stop-opacity="0.07"/><stop offset="0.750" stop-color="#000000" stop-opacity="0.07"/><stop offset="0.833" stop-color="#FFFFFF" stop-opacity="0.07"/><stop offset="0.917" stop-color="#000000" stop-opacity="0.07"/><stop offset="1.000" stop-color="#FFFFFF" stop-opacity="0.07"/></linearGradient>
+    <linearGradient id="rod" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98458"/><stop offset="1" stop-color="#6E4429"/></linearGradient>
+    <linearGradient id="hemShade" gradientUnits="userSpaceOnUse" x1="0" y1="196" x2="0" y2="256"><stop offset="0" stop-color="#000" stop-opacity="0.16"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#2A0E02" flood-opacity="0.38"/></filter>
+    <filter id="rodS" x="-10%" y="-50%" width="120%" height="300%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2A0E02" flood-opacity="0.35"/></filter>
+    <mask id="slit" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><rect width="1024" height="1024" fill="#fff"/><rect x="504" y="676" width="16" height="170" rx="8" fill="#000"/></mask>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+  <rect x="84" y="158" width="856" height="40" rx="20" fill="url(#rod)" filter="url(#rodS)"/>
+  <g filter="url(#soft)">
+    <g mask="url(#slit)">
+    <path d="M150 196 H874 L880 810 C764 802 622 816 512 808 C402 816 260 802 144 810 Z" fill="url(#cloth)"/>
+    <path d="M150 196 H874 L880 810 C764 802 622 816 512 808 C402 816 260 802 144 810 Z" fill="url(#folds)"/>
+    <rect x="150" y="196" width="724" height="60" fill="url(#hemShade)"/>
+    <g fill="#FFF4E8">
+      <circle cx="512" cy="452" r="168" fill="none" stroke="#FFF4E8" stroke-width="24"/>
+      <g transform="translate(512 470) scale(1.14) translate(-512 -470)"><path d="M424 430 C430 384 470 366 512 366 C554 366 594 384 600 430 Z"/><path d="M404 448 H620 C620 510 572 544 512 544 C452 544 404 510 404 448 Z"/><path d="M478 548 H546 L542 568 Q541 574 535 574 H489 Q483 574 482 568 Z"/></g>
+    </g>
+    </g>
+  </g>
+  <rect x="174" y="150" width="52" height="60" rx="10" fill="url(#cloth)"/><rect x="330" y="150" width="52" height="60" rx="10" fill="url(#cloth)"/><rect x="486" y="150" width="52" height="60" rx="10" fill="url(#cloth)"/><rect x="642" y="150" width="52" height="60" rx="10" fill="url(#cloth)"/><rect x="798" y="150" width="52" height="60" rx="10" fill="url(#cloth)"/>
+</svg>
